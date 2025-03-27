@@ -205,21 +205,22 @@
 
 
     🔹 Example Call Stack Execution
-    function one() {
-        two();
-        console.log("first");
-    }
+    
+                function one() {
+                    two();
+                    console.log("first");
+                }
 
-    function two() {
-        three();
-        console.log("Second");
-    }
+                function two() {
+                    three();
+                    console.log("Second");
+                }
 
-    function three() {
-        console.log("third");
-    }
+                function three() {
+                    console.log("third");
+                }
 
-    one();
+                one();
 
 
     ✅ Call Stack Execution Order
