@@ -34,3 +34,19 @@ console.log(Number("44s"));       //Output: NaN
 
 let randomNum = Math.floor(Math.random() * 10) + 1;
 console.log(randomNum);  // Output: Random number between 1 and 10
+
+
+
+// 5. toString(), toPrecision and toFixed()
+
+console.log((3.14159).toFixed(2));      //3.14
+console.log((3.14159).toPrecision(5));  //3.1416
+console.log((3.14159).toString());      //3.14159
+
+
+
+// 6. Math.pow(), Math.sqrt(), Math.abs()
+
+console.log(Math.pow(2, 3));  //8
+console.log(Math.sqrt(25));   //5
+console.log(Math.abs(-20));   //20
