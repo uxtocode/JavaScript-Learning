@@ -59,11 +59,17 @@
 
 //         Example:
                 
-            console.log(Number("42"));     // 42
-            console.log(parseInt("42px")); // 42
+            console.log(Number("42"));       // 42
+            console.log(Number("42abc"));    // NaN
+            console.log(parseInt("42px"));   // 42
             console.log(parseFloat("3.14")); // 3.14
+            console.log(parseFloat("3.14px")); // 3.14
             console.log(Number("abc")); // NaN (Not a Number)
 
+
+
+
+            
 // 3. Converting to Boolean
 
 
