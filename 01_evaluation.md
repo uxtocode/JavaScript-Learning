@@ -61,3 +61,52 @@ Here are practice questions (till Data Types):
 48. What function converts a string to a number?  
 49. What does `typeof null` return?  
 50. How do you check if an object is an instance of a specific class?  
+
+---
+
+### **1️⃣ Introduction to JavaScript** (Additional)  
+51. What are some common JavaScript frameworks and libraries?  
+52. Why is JavaScript called a single-threaded language?  
+53. What is the difference between synchronous and asynchronous JavaScript?  
+
+---
+
+### **2️⃣ JavaScript Execution Process** (Additional)  
+54. What is lexical scope in JavaScript?  
+55. What happens during the creation phase of an execution context?  
+56. What is the difference between a callback function and a normal function?  
+57. How does JavaScript handle asynchronous operations?  
+58. Why is the event loop important in JavaScript?  
+
+---
+
+### **3️⃣ Current Features of JavaScript (ES6+)** (Additional)  
+59. How does the `const` keyword work with objects and arrays?  
+60. What happens when you try to reassign an object declared with `const`?  
+61. What is the difference between a shallow copy and a deep copy in JavaScript?  
+62. How do you use the spread operator to clone an array?  
+63. What are default function parameters used for?  
+64. Can you use `for...of` on objects? Why or why not?  
+
+---
+
+### **4️⃣ Use Cases of JavaScript** (Additional)  
+65. What is AJAX, and how is it related to JavaScript?  
+66. What role does JavaScript play in API interactions?  
+67. What is the difference between client-side and server-side JavaScript?  
+68. What is the difference between JavaScript and TypeScript?  
+
+---
+
+### **5️⃣ Variables and Scope** (Additional)  
+69. What is a temporal dead zone (TDZ) in JavaScript?  
+70. What happens when you try to use `let` before it is declared?  
+71. What is the difference between mutable and immutable data types?  
+
+---
+
+### **6️⃣ Data Types and Methods** (Additional)  
+72. What is the difference between `parseInt()` and `Number()`?  
+73. How can you check if a variable is an array?  
+74. What does `typeof NaN` return?  
+75. What is the difference between `==` and `===` in JavaScript?  
