@@ -133,3 +133,40 @@
 // To Number	    Number(value), parseInt(value), parseFloat(value)
 // To Boolean	    Boolean(value)
 // To Object	    JSON.parse(value)
+
+
+
+
+// Conversion of null and undefined
+console.log("converion of null and undefined");
+
+
+
+console.log(String(null));         //"null"
+console.log(String(undefined));    //"undefined"
+
+
+let a = null;
+let b;
+console.log(a.toString());       //"null"
+console.log(b.toString());       //undefined
+
+
+
+console.log(Number(null));         //0
+console.log(Number(undefined));    //NaN
+
+
+
+console.log(parseInt(null));       //NaN
+console.log(parseInt(undefined));  //NaN
+
+
+
+console.log(parseFloat(null));       //NaN
+console.log(parseFloat(undefined));  //NaN
+
+
+
+console.log(Boolean(null));        //false
+console.log(parseInt(undefined));  //NaN
