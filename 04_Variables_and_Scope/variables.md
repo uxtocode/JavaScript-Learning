@@ -185,7 +185,7 @@ var sayHi = function () {
 ---
 
 ## Key Takeaways
-✔️ `var` is function-scoped, while `let` and `const` are block-scoped.
-✔️ `var` is hoisted and initialized as `undefined`, while `let` and `const` are hoisted but stay in the TDZ.
-✔️ Function declarations are hoisted, but function expressions are NOT.
-✔️ Avoid `var` and use `let` or `const` to prevent scope-related bugs.
+- `var` is function-scoped, while `let` and `const` are block-scoped.
+- `var` is hoisted and initialized as `undefined`, while `let` and `const` are hoisted but stay in the TDZ.
+- Function declarations are hoisted, but function expressions are NOT.
+- Avoid `var` and use `let` or `const` to prevent scope-related bugs.
