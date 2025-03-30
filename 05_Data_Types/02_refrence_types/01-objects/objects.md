@@ -6,148 +6,148 @@
 
 ## Declaring an Object in JavaScript
 
-    You can declare an object in multiple ways:
+You can declare an object in multiple ways:
 
-    ### 1. Using Object Literal (Most Common Way)
+### 1. Using Object Literal (Most Common Way)
 
-    ```js
-    const person = {
-    name: "John",
-    age: 25,
-    isStudent: false,
-    greet: function () {
-        return "Hello, " + this.name;
-    }
-    };
-    ```
+```js
+const person = {
+  name: "John",
+  age: 25,
+  isStudent: false,
+  greet: function () {
+    return "Hello, " + this.name;
+  }
+};
+```
 
-    ### 2. Using the `new Object()` Constructor
+### 2. Using the `new Object()` Constructor
 
-    ```js
-    const car = new Object();
-    car.brand = "Toyota";
-    car.model = "Corolla";
-    car.year = 2022;
-    ```
+```js
+const car = new Object();
+car.brand = "Toyota";
+car.model = "Corolla";
+car.year = 2022;
+```
 
-    ### 3. Using a Constructor Function
+### 3. Using a Constructor Function
 
-    ```js
-    function Person(name, age) {
+```js
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+const person1 = new Person("Alice", 30);
+const person2 = new Person("Bob", 25);
+```
+
+### 4. Using Class Syntax (ES6)
+
+```js
+class Animal {
+  constructor(name, type) {
     this.name = name;
-    this.age = age;
-    }
+    this.type = type;
+  }
+}
 
-    const person1 = new Person("Alice", 30);
-    const person2 = new Person("Bob", 25);
-    ```
+const dog = new Animal("Buddy", "Dog");
+```
 
-    ### 4. Using Class Syntax (ES6)
+## Accessing Object Properties
 
-    ```js
-    class Animal {
-    constructor(name, type) {
-        this.name = name;
-        this.type = type;
-    }
-    }
+You can access object properties in two ways:
 
-    const dog = new Animal("Buddy", "Dog");
-    ```
+### 1. Dot Notation (Preferred)
 
-    ## Accessing Object Properties
+```js
+console.log(person.name);  // Output: John
+console.log(car.brand);    // Output: Toyota
+```
 
-    You can access object properties in two ways:
+### 2. Bracket Notation (Useful for Dynamic Keys)
 
-    ### 1. Dot Notation (Preferred)
+```js
+console.log(person["age"]);   // Output: 25
 
-    ```js
-    console.log(person.name);  // Output: John
-    console.log(car.brand);    // Output: Toyota
-    ```
-
-    ### 2. Bracket Notation (Useful for Dynamic Keys)
-
-    ```js
-    console.log(person["age"]);   // Output: 25
-
-    const key = "model";
-    console.log(car[key]);  // Output: Corolla
-    ```
+const key = "model";
+console.log(car[key]);  // Output: Corolla
+```
 
 ## Common Methods Used with Objects in JavaScript
 
-    ### 1. `Object.keys(obj)` – Get All Keys
-    Returns an array of all the keys (property names) of an object.
+### 1. `Object.keys(obj)` – Get All Keys
+Returns an array of all the keys (property names) of an object.
 
-    ```js
-    console.log(Object.keys(person)); 
-    // Output: ["name", "age", "isStudent", "greet"]
-    ```
+```js
+console.log(Object.keys(person)); 
+// Output: ["name", "age", "isStudent", "greet"]
+```
 
-    ### 2. `Object.values(obj)` – Get All Values
-    Returns an array of all the values in an object.
+### 2. `Object.values(obj)` – Get All Values
+Returns an array of all the values in an object.
 
-    ```js
-    console.log(Object.values(person)); 
-    // Output: ["John", 25, false, ƒ]
-    ```
+```js
+console.log(Object.values(person)); 
+// Output: ["John", 25, false, ƒ]
+```
 
-    ### 3. `Object.entries(obj)` – Get Key-Value Pairs
-    Returns an array of `[key, value]` pairs.
+### 3. `Object.entries(obj)` – Get Key-Value Pairs
+Returns an array of `[key, value]` pairs.
 
-    ```js
-    console.log(Object.entries(person)); 
-    // Output: [["name", "John"], ["age", 25], ["isStudent", false], ["greet", ƒ]]
-    ```
+```js
+console.log(Object.entries(person)); 
+// Output: [["name", "John"], ["age", 25], ["isStudent", false], ["greet", ƒ]]
+```
 
-    ### 4. `Object.assign(target, source)` – Copy Object Properties
-    Copies properties from one object to another.
+### 4. `Object.assign(target, source)` – Copy Object Properties
+Copies properties from one object to another.
 
-    ```js
-    const obj1 = { a: 1, b: 2 };
-    const obj2 = { c: 3 };
-    const merged = Object.assign({}, obj1, obj2);
-    console.log(merged); 
-    // Output: { a: 1, b: 2, c: 3 }
-    ```
+```js
+const obj1 = { a: 1, b: 2 };
+const obj2 = { c: 3 };
+const merged = Object.assign({}, obj1, obj2);
+console.log(merged); 
+// Output: { a: 1, b: 2, c: 3 }
+```
 
-    ### 5. `Object.freeze(obj)` – Prevent Modifications
-    Prevents adding, modifying, or deleting properties.
+### 5. `Object.freeze(obj)` – Prevent Modifications
+Prevents adding, modifying, or deleting properties.
 
-    ```js
-    const frozenObj = { name: "Sam" };
-    Object.freeze(frozenObj);
-    frozenObj.name = "Alex";  // No effect
-    console.log(frozenObj.name);  // Output: Sam
-    ```
+```js
+const frozenObj = { name: "Sam" };
+Object.freeze(frozenObj);
+frozenObj.name = "Alex";  // No effect
+console.log(frozenObj.name);  // Output: Sam
+```
 
-    ### 6. `Object.seal(obj)` – Prevent Adding/Removing Properties
-    Allows modifying existing properties but prevents adding or deleting.
+### 6. `Object.seal(obj)` – Prevent Adding/Removing Properties
+Allows modifying existing properties but prevents adding or deleting.
 
-    ```js
-    const sealedObj = { age: 30 };
-    Object.seal(sealedObj);
-    sealedObj.age = 31;  // Allowed
-    sealedObj.city = "NY";  // Not allowed
-    console.log(sealedObj); // Output: { age: 31 }
-    ```
+```js
+const sealedObj = { age: 30 };
+Object.seal(sealedObj);
+sealedObj.age = 31;  // Allowed
+sealedObj.city = "NY";  // Not allowed
+console.log(sealedObj); // Output: { age: 31 }
+```
 
-    ### 7. `hasOwnProperty(prop)` – Check if Object Has a Property
-    Returns `true` if the object has the specified property.
+### 7. `hasOwnProperty(prop)` – Check if Object Has a Property
+Returns `true` if the object has the specified property.
 
-    ```js
-    console.log(person.hasOwnProperty("age")); // Output: true
-    console.log(person.hasOwnProperty("gender")); // Output: false
-    ```
+```js
+console.log(person.hasOwnProperty("age")); // Output: true
+console.log(person.hasOwnProperty("gender")); // Output: false
+```
 
-    ### 8. `Object.create(proto)` – Create an Object with a Prototype
-    Creates a new object with the given prototype.
+### 8. `Object.create(proto)` – Create an Object with a Prototype
+Creates a new object with the given prototype.
 
-    ```js
-    const prototypeObj = { greet: function () { return "Hello!"; } };
-    const newObj = Object.create(prototypeObj);
-    console.log(newObj.greet()); // Output: Hello!
+```js
+const prototypeObj = { greet: function () { return "Hello!"; } };
+const newObj = Object.create(prototypeObj);
+console.log(newObj.greet()); // Output: Hello!
 ```
 
 ## Conclusion
