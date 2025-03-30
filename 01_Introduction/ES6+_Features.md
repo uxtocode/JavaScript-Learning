@@ -1,125 +1,121 @@
-1️⃣ let and const vs var
+# JavaScript ES6 Features
 
-    * let and const were introduced in ES6 to replace var.
+## 1️⃣ let and const vs var
 
-    * let allows reassignment, while const is for values that don’t change.
+- `let` and `const` were introduced in ES6 to replace `var`.
+- `let` allows reassignment, while `const` is for values that don’t change.
+- `var` is function-scoped, whereas `let` and `const` are block-scoped.
 
-    * var is function-scoped, whereas let and const are block-scoped.
+```js
+if (true) {
+    let x = 10;  // Block-scoped
+    const y = 20; // Block-scoped, cannot be reassigned
+    var z = 30;  // Function-scoped
+}
+console.log(z); // ✅ 30
+console.log(x); // ❌ ReferenceError
+console.log(y); // ❌ ReferenceError
+```
 
+---
 
-            if (true) {
-                let x = 10;  // Block-scoped
-                const y = 20; // Block-scoped, cannot be reassigned
-                var z = 30;  // Function-scoped
-            }
-            console.log(z); // ✅ 30
-            console.log(x); // ❌ ReferenceError
-            console.log(y); // ❌ ReferenceError
+## 2️⃣ Template Literals
 
+- Use backticks (`` ` ``) instead of quotes for strings.
+- Supports multi-line strings and embedded expressions (`${}`).
 
+```js
+const name = "John";
+const message = `Hello, ${name}!`;
+console.log(message); // "Hello, John!"
+```
 
+---
 
+## 3️⃣ Arrow Functions
 
-2️⃣ Template Literals
+- Shorter syntax for functions.
+- Automatically binds `this` (useful in objects and classes).
 
-    * Use backticks (` `) instead of quotes for strings.
+```js
+const add = (a, b) => a + b;
+console.log(add(2, 3)); // 5
+```
 
-    * Supports multi-line strings and embedded expressions (${})
+✅ Implicit return (if there's only one expression):
 
-            const name = "John";
-            const message = `Hello, ${name}!`;  
-            console.log(message); // "Hello, John!"
+```js
+const greet = name => `Hello, ${name}!`;
+console.log(greet("Alice")); // "Hello, Alice!"
+```
 
+---
 
+## 4️⃣ Destructuring & Spread/Rest Operators
 
+✅ **Destructuring (Extract values from arrays/objects)**
 
+```js
+const person = { name: "John", age: 25 };
+const { name, age } = person;
+console.log(name, age); // John 25
+```
 
-3️⃣ Arrow Functions
+✅ **Spread (`...`) (Expands elements)**
 
-    * Shorter syntax for functions.
+```js
+const arr1 = [1, 2, 3];
+const arr2 = [...arr1, 4, 5];  
+console.log(arr2); // [1, 2, 3, 4, 5]
+```
 
-    * Automatically binds this (useful in objects and classes).
+✅ **Rest (`...`) (Collects remaining values)**
 
-            const add = (a, b) => a + b;
-            console.log(add(2, 3)); // 5
+```js
+const sum = (...numbers) => numbers.reduce((acc, num) => acc + num, 0);
+console.log(sum(1, 2, 3, 4)); // 10
+```
 
+---
 
-    Implicit return (if there's only one expression).
+## 5️⃣ Default Parameters
 
-            const greet = name => `Hello, ${name}!`;
-            console.log(greet("Alice")); // "Hello, Alice!"
+- Set default values for function parameters.
 
+```js
+const greet = (name = "Guest") => `Hello, ${name}!`;
+console.log(greet()); // "Hello, Guest!"
+console.log(greet("Alice")); // "Hello, Alice!"
+```
 
+---
 
+## 6️⃣ for...of Loop
 
+- Iterates over iterable objects (arrays, strings, sets, etc.).
 
+```js
+const numbers = [1, 2, 3, 4];
+for (const num of numbers) {
+    console.log(num); // 1, 2, 3, 4
+}
+```
 
-4️⃣ Destructuring & Spread/Rest Operators
+---
 
-    ✅ Destructuring (Extract values from arrays/objects)
+## 7️⃣ Modules (`import` & `export`)
 
-            const person = { name: "John", age: 25 };
-            const { name, age } = person;
-            console.log(name, age); // John 25
+- Helps split code into multiple files for better organization.
 
+✅ **Export from a file (`math.js`)**
 
+```js
+export const add = (a, b) => a + b;
+export const subtract = (a, b) => a - b;
+```
 
-    ✅ Spread (...) (Expands elements)
+✅ **Import in another file (`app.js`)**
 
-            const arr1 = [1, 2, 3];
-            const arr2 = [...arr1, 4, 5];  
-            console.log(arr2); // [1, 2, 3, 4, 5]
-
-
-
-    ✅ Rest (...) (Collects remaining values)
-
-            const sum = (...numbers) => numbers.reduce((acc, num) => acc + num, 0);
-            console.log(sum(1, 2, 3, 4)); // 10
-
-
-
-
-
-
-5️⃣ Default Parameters
-
-    * Set default values for function parameters.
-
-            const greet = (name = "Guest") => `Hello, ${name}!`;
-            console.log(greet()); // "Hello, Guest!"
-            console.log(greet("Alice")); // "Hello, Alice!"
-
-
-        
-
-
-
-6️⃣ for...of Loop
-
-    * Iterates over iterable objects (arrays, strings, sets, etc.).
-
-            const numbers = [1, 2, 3, 4];
-            for (const num of numbers) {
-                console.log(num); // 1, 2, 3, 4
-            }
-
-
-
-
-
-
-7️⃣ Modules (import & export)
-    
-    * Helps split code into multiple files for better organization.
-
-    ✅ Export from a file (math.js)
-
-            export const add = (a, b) => a + b;
-            export const subtract = (a, b) => a - b;
-
-
-    ✅ Import in another file (app.js)
-
-            import { add, subtract } from './math.js';
-            console.log(add(5, 3)); // 8
+```js
+import { add, subtract } from './math.js';
+console.log(add(5, 3)); // 8
