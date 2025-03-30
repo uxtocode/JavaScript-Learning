@@ -20,6 +20,10 @@
         console.log(typeof true);      // "boolean"
         console.log(typeof undefined); // "undefined"
         console.log(typeof null);      // "object" (special case)
+        console.log(typeof (100000000000000000000000000000n));  //bigint
+        console.log(typeof Symbol("id"));  //symbol
+        
+
         console.log(typeof {});        // "object"
         console.log(typeof []);        // "object"
         console.log(typeof function () { }); // "function"
