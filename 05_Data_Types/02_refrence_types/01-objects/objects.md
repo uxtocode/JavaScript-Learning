@@ -1,8 +1,10 @@
 # Objects in JavaScript
 
-    Objects in JavaScript are used to store multiple values in a structured way. They represent real-world entities by storing properties (key-value pairs) and methods (functions inside an object).
+    * Objects in JavaScript are used to store multiple values in a structured way.
+    
+    * They represent real-world entities by storing properties (key-value pairs) and methods (functions inside an object).
 
-    Objects allow you to group related data and behavior together, making it easier to work with complex data.
+    * Objects allow you to group related data and behavior together, making it easier to work with complex data.
 
 ## Declaring an Object in JavaScript
 
