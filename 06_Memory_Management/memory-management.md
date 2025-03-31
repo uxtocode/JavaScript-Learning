@@ -1,7 +1,5 @@
 # Memory management in JavaScript 
 
----
-
 ## **1️⃣ Stack vs Heap Memory**  
 JavaScript uses two types of memory storage:  
 
