@@ -1,4 +1,4 @@
-### **Operators & Expressions in JavaScript**
+# **Operators & Expressions in JavaScript**
 
 #### **1️⃣ Arithmetic Operators (Perform mathematical operations)**
 | Operator | Meaning | Example | Output |
