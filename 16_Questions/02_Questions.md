@@ -1,7 +1,5 @@
 # **Important Questions**
 
----
-
 ### **Memory Management in JavaScript**
 
 1. **What is the difference between stack and heap memory in JavaScript?**  
