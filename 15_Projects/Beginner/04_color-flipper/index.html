@@ -11,46 +11,44 @@
 <body>
     <main>
         <div class="container">
+            <div class="switcher" id="switcher">
+                <input type="radio" name="color" id="hex" checked>
+                <label for="hex">Hex color code</label>
+
+                <input type="radio" name="color" id="rgb">
+                <label for="rgb">RGB color code</label>
+            </div>
+
             <h1>Background Color: <span id="color">#FFFFFF</span></h1>
-            <button id="btn">Click Me</button>
+            <button class="btn" id="btn-generate">Generate Color</button>
         </div>
     </main>
 
     <script>
-        document.getElementById("btn").addEventListener("click", () => {
-            let possibleCode = "1234567890ABCDEF"
-            let color = "#"
+        document.getElementById("btn-generate").addEventListener("click", () => {
+            const selectedMode = document.querySelector('input[name="color"]:checked').id;
+            let color = "";
 
-
-            for (let i = 0; i < 6; i++) {
-                let random = Math.floor((Math.random() * 16));
-                color += possibleCode[random];
+            if (selectedMode === "hex") {
+                let possibleCode = "1234567890ABCDEF";
+                color = "#";
+                for (let i = 0; i < 6; i++) {
+                    let random = Math.floor(Math.random() * 16);
+                    color += possibleCode[random];
+                }
+            } else {
+                let arr = [];
+                for (let j = 0; j < 3; j++) {
+                    let random1 = Math.floor(Math.random() * 255);
+                    arr.push(random1);
+                }
+                color = `rgb(${arr.join(", ")})`;
             }
-            console.log(color);
+
             document.body.style.backgroundColor = color;
-
-            document.getElementById("color").innerHTML = color.toUpperCase();
-
-
-
-            // rgb
-            // let arr = []
-            // for (let j = 0; j < 3; j++) {
-            //     let random1 = Math.floor((Math.random() * 255) + 1);
-            //     arr.push(random1);
-            // }
-            // let rgbColor = `rgb(${arr.join(", ")})`;
-
-            // console.log(rgbColor);
-
-            // document.body.style.backgroundColor = rgbColor;
-            // document.getElementById("color").innerHTML = rgbColor;
-
-        })
-
-
-
-
+            document.getElementById("color").textContent = color.toUpperCase();
+            console.log(color);
+        });
     </script>
 </body>
 
