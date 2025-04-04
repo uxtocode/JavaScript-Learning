@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div>
+        <h2>Quote of the Day</h2>
+        <p id="quote"></p>
+    </div>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const quotes = [
+                "The best way to get started is to quit talking and begin doing. – Walt Disney",
+                "Don’t let yesterday take up too much of today. – Will Rogers",
+                "It’s not whether you get knocked down, it’s whether you get up. – Vince Lombardi",
+                "If you are working on something exciting, it will keep you motivated. – Steve Jobs",
+                "Success is not in what you have, but who you are. – Bo Bennett",
+                "Hardships often prepare ordinary people for an extraordinary destiny. – C.S. Lewis",
+                "Believe you can and you’re halfway there. – Theodore Roosevelt",
+                "Opportunities don't happen, you create them. – Chris Grosser",
+                "Code is like humor. When you have to explain it, it’s bad. – Cory House",
+                "Experience is the name everyone gives to their mistakes. – Oscar Wilde"
+            ];
+
+            let random = Math.floor(Math.random() * quotes.length);
+            document.getElementById("quote").innerText = quotes[random];
+        });
+    </script>
+
+</body>
+
+</html>
