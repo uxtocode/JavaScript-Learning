@@ -8,8 +8,23 @@
     <link href="./output.css" rel="stylesheet">
 </head>
 
-<body class="bg-gray-100 text-center p-10">
-    <h1 class="text-3xl font-bold text-blue-600">Hello, Tailwind!</h1>
+<body class="bg-gray-500 text-center h-screen flex justify-center items-center">
+
+    <div class="bg-white w-1/3 p-10 rounded-lg">
+        <h1 class="text-4xl font-bold mb-10 underline">Counter</h1>
+        <div class="flex gap-3 justify-center">
+            <button id="decrease"
+                class=" bg-black text-white py-2.5 px-5 rounded-md hover:bg-gray-600 hover:cursor-pointer">Decrease</button>
+            <button id="increase"
+                class=" bg-black text-white py-2.5 px-5 rounded-md  hover:bg-gray-600 hover:cursor-pointer">Increase</button>
+            <button id="reset"
+                class="bg-amber-400 py-2.5 px-5 rounded-md hover:bg-amber-600 hover:cursor-pointer">Reset</button>
+        </div>
+
+        <span class="inline-block w-30 text-3xl mt-10" id="count">0</span>
+    </div>
+
+
     <script src="./script.js"></script>
 </body>
 
