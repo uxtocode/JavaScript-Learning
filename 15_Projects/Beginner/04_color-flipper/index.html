@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Flipper</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            <h1>Background Color: <span id="color">#FFFFFF</span></h1>
+            <button id="btn">Click Me</button>
+        </div>
+    </main>
+
+    <script>
+        document.getElementById("btn").addEventListener("click", () => {
+            let possibleCode = "1234567890ABCDEF"
+            let color = "#"
+
+
+            for (let i = 0; i < 6; i++) {
+                let random = Math.floor((Math.random() * 16));
+                color += possibleCode[random];
+            }
+            console.log(color);
+            document.body.style.backgroundColor = color;
+
+            document.getElementById("color").innerHTML = color.toUpperCase();
+
+
+
+            // rgb
+            // let arr = []
+            // for (let j = 0; j < 3; j++) {
+            //     let random1 = Math.floor((Math.random() * 255) + 1);
+            //     arr.push(random1);
+            // }
+            // let rgbColor = `rgb(${arr.join(", ")})`;
+
+            // console.log(rgbColor);
+
+            // document.body.style.backgroundColor = rgbColor;
+            // document.getElementById("color").innerHTML = rgbColor;
+
+        })
+
+
+
+
+    </script>
+</body>
+
+</html>
