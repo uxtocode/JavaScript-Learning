@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #000;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-family: sans-serif;
+        }
+
+        h1 {
+            font-size: 7rem;
+            text-shadow: 0 0 20px rgba(128, 128, 128, 0.2);
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: gray;
+            margin-bottom: 1rem;
+            text-decoration: underline;
+        }
+
+        p {
+            font-size: 1.5rem;
+            color: #ccc;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h2>Indian Standard Time (IST) UTC+05:30</h2>
+        <h1 id="time"></h1>
+        <p id="date"></p>
+    </div>
+
+    <script>
+        function showTime() {
+            const timeOptions = {
+                timeZone: 'Asia/Kolkata',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: true
+            };
+
+            const dateOptions = {
+                timeZone: 'Asia/Kolkata',
+                year: 'numeric',
+                month: 'long',
+                day: '2-digit'
+            };
+
+            const now = new Date();
+            const timeToShow = now.toLocaleTimeString('en-IN', timeOptions).toUpperCase();
+            const dateToShow = now.toLocaleDateString('en-IN', dateOptions);
+
+            document.getElementById("time").innerHTML = timeToShow;
+            document.getElementById("date").innerHTML = dateToShow;
+        }
+
+        setInterval(showTime, 1000);
+        showTime(); // Initial call
+    </script>
+</body>
+
+</html>
