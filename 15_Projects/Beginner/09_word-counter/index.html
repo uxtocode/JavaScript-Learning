@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Word Counter</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <form>
+            <input id="user-input" type="text" placeholder="type here" autocomplete="off">
+        </form>
+
+        <h2>Number of words: <span id="word-count">0</span></h2>
+
+    </div>
+
+    <script>
+        let userInput = document.getElementById("user-input");
+
+        userInput.addEventListener("input", () => {
+            let inputValue = userInput.value.trim();
+            let wordCount = inputValue === "" ? 0 : inputValue.split(/\s+/).length;
+            document.getElementById("word-count").innerText = wordCount;
+        });
+    </script>
+</body>
+
+</html>
