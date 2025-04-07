@@ -71,7 +71,7 @@ function showMessage(message1, message2) {
             <h1 class="text-3xl font-semibold mb-3">${message1}, You ${message2}!</h1>
             <p class="mb-5">The number was <strong>${randomNumber}</strong></p>
             <button id="play-again" class="bg-purple-500 px-3 py-1 text-xl font-semibold rounded-md cursor-pointer text-white mt-2">
-                Let's Play Again 
+                Play Again 
                 <img class="inline mr-1" src="assets/reload.png" width="20px">
             </button>
         </div>
