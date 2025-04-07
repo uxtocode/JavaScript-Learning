@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon">
+    <title>To-Do - (uxtocode)</title>
+    <link rel="stylesheet" href="./output.css">
+</head>
+
+<body class="bg-[#121212] min-h-screen flex items-center justify-center p-4 text-white">
+
+    <div class="w-full max-w-xl bg-[#181818] shadow-2xl rounded-2xl p-6 space-y-6 sm:p-8">
+        <h1 class="text-2xl sm:text-3xl font-bold text-white text-center">To-Do List</h1>
+
+        <!-- Add Task -->
+        <div class="w-full">
+            <form class="w-full flex flex-col sm:flex-row gap-3">
+                <input type="text" id="taskInput" placeholder="What do you need to do?"
+                    class="w-full sm:flex-1 px-4 py-2 bg-[#2a2a2a] text-white border border-gray-700 rounded-lg placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#1DB954]" />
+                <button type="submit" id="addTaskBtn"
+                    class="w-full sm:w-auto bg-[#1DB954] hover:bg-[#1ed760] text-black font-semibold px-4 py-2 rounded-lg transition">
+                    Add Task
+                </button>
+            </form>
+        </div>
+
+        <!-- Pending Tasks -->
+        <div id="pendingSection">
+            <h2 id="pendingHeading" class="text-lg sm:text-xl font-semibold text-white mb-2">Pending Tasks</h2>
+            <ul id="pendingList" class="space-y-2"></ul>
+        </div>
+
+        <!-- Completed Tasks -->
+        <div id="completedSection">
+            <h2 id="completedHeading" class="text-lg sm:text-xl font-semibold text-white mb-2">Completed Tasks</h2>
+            <ul id="completedList" class="space-y-2"></ul>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
