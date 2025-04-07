@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="./output.css">
+    <style>
+        .activated{
+             background-color: black;
+             color:white;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-300 flex justify-center items-center min-h-screen">
+
+    <div class="py-10 px-15 rounded-lg bg-yellow-600">
+        <h1 class="text-3xl font-semibold text-center mb-7">Calculate BMI</h1>
+        <form action="">
+            <div class="mb-5">
+                <label class="block mb-1.5" for="height">Height </label>
+                <input id="height" type="text" placeholder="Enter Height"
+                    class="px-2 py-1 bg-amber-50 rounded-md  outline-0 border-2 border-amber-600">
+                <div class="inline border-2 border-black py-1 rounded-md">
+                    <span id="feet" class="px-2 py-1 w-1/2 activated">feet</span>
+                    <span id="meters" class="px-2 py-1 w-1/2">meters</span>
+                </div>
+            </div>
+            <div class="mb-7">
+                <label class="block mb-1.5" for="weight">Weight </label>
+                <input id="weight" type="text" placeholder="Enter Height"
+                    class="px-2 py-1 bg-amber-50 rounded-md outline-0 border-2 border-amber-600">
+                <div class="inline border-2 border-black py-1 rounded-md">
+                    <span id="kgs" class="px-2 py-1 w-1/2 activated">kgs</span>
+                    <span id="pounds" class="px-2 py-1 w-1/2">pounds</span>
+                </div>
+            </div>
+            <div class="flex justify-center">
+                <button id="calculate" type="submit"
+                    class="w-full p-1.5 bg-black text-white rounded-md cursor-pointer hover:bg-gray-950">Calculate</button>
+            </div>
+        </form>
+
+        <h2 id="showBMI" class="text-center mb-2 mt-5"></h2>
+        <hr id="hidden" class="hidden">
+        <p id="message" class="text-center mt-2"></p>
+    </div>
+
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
