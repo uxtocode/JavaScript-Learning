@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modals</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: "Poppins", sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        .box {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            background-color: black;
+            color: white;
+            padding: 40px;
+            border-radius: 7px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.493);
+        }
+
+        p {
+            color: #6d6d6d;
+        }
+
+        button {
+            padding: 10px 15px;
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            font-size: 16px;
+            border: none;
+            outline: none;
+            border-radius: 7px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            font-weight: 600;
+        }
+
+        button:hover {
+            background-color: #b8b8b8;
+        }
+
+        .bgc {
+            background-color: #00000085;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100vw;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .bgc.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .pop-up {
+            width: 40%;
+            background-color: rgb(255, 255, 255);
+            padding: 40px;
+            border-radius: 7px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.493);
+            position: relative;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 30px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <h2>Heading of the Section</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum earum mollitia quasi, eaque ab impedit
+            incidunt. Eaque reprehenderit perspiciatis laudantium accusamus adipisci beatae ex nisi accusantium
+            recusandae assumenda. Sequi, voluptatum.</p>
+        <button id="showBtn">Show Modal</button>
+    </div>
+
+    <div class="bgc" id="modalBg">
+        <div class="pop-up">
+            <span class="close-btn" id="closeBtn">&times;</span>
+            <h1>Hello World</h1>
+        </div>
+    </div>
+
+    <script>
+        const showBtn = document.getElementById("showBtn");
+        const closeBtn = document.getElementById("closeBtn");
+        const modalBg = document.getElementById("modalBg");
+
+        showBtn.addEventListener("click", () => {
+            modalBg.classList.add("active");
+        });
+
+        closeBtn.addEventListener("click", () => {
+            modalBg.classList.remove("active");
+        });
+
+        // Close modal if you click outside the popup
+        modalBg.addEventListener("click", (e) => {
+            if (e.target === modalBg) {
+                modalBg.classList.remove("active");
+            }
+        });
+    </script>
+</body>
+
+</html>
