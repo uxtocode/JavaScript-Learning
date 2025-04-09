@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/feedback.png" type="image/x-icon">
+    <title>Reviews</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        #card-container {
+            transition: opacity 0.3s ease;
+        }
+
+        .fade {
+            opacity: 0;
+        }
+    </style>
+
+</head>
+
+<body class="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-8">
+
+    <h1 class="text-3xl font-bold mb-6">Our Reviews</h1>
+
+    <div id="card-container"
+        class="relative flex flex-col items-center p-6 py-10 rounded-xl shadow-lg max-w-sm w-full h-[70vh] text-center border-2 border-amber-500">
+        <img id="userImage" src="assets/1.jpg" alt="Reviewer" class="w-28 h-28 rounded-full mx-auto mb-4 object-cover">
+        <p id="userName" class="text-lg font-semibold text-gray-800"></p>
+        <p id="userProfession" class="text-sm text-gray-500"></p>
+        <p id="userReview" class="mt-3 text-gray-700 p-3"></p>
+
+        <div class="flex gap-8 mt-4 mb-2 text-3xl justify-center absolute bottom-4">
+            <button id="prev-btn">
+                <i data-lucide="arrow-left" class="w-6 h-6 stroke-gray-500 hover:stroke-red-500 transition-all"></i>
+            </button>
+
+            <button id="next-btn">
+                <i data-lucide="arrow-right" class="w-6 h-6 stroke-gray-500 hover:stroke-red-500 transition-all"></i>
+            </button>
+
+        </div>
+    </div>
+
+    <script>
+        // load lucide icons
+        lucide.createIcons();
+
+
+        let reviews = [
+            {
+                reviewID: 1,
+                userImage: "assets/1.jpg",
+                userName: "Amber Rose",
+                userProfession: "UI/UX Designer",
+                userReview: "Working with this team was a joy from start to finish. The design was modern and user-friendly. I highly recommend their services!"
+            },
+            {
+                reviewID: 2,
+                userImage: "assets/2.jpg",
+                userName: "Liam Bennett",
+                userProfession: "Frontend Developer",
+                userReview: "Excellent communication and top-notch coding skills. The project was delivered ahead of schedule and exceeded expectations."
+            },
+            {
+                reviewID: 3,
+                userImage: "assets/3.jpg",
+                userName: "Isabella Nguyen",
+                userProfession: "Project Manager",
+                userReview: "Professional, organized, and incredibly efficient. The workflow was seamless, and they handled feedback exceptionally well."
+            },
+            {
+                reviewID: 4,
+                userImage: "assets/4.jpg",
+                userName: "Ethan Patel",
+                userProfession: "Full Stack Developer",
+                userReview: "Impressive attention to detail. They built a robust solution and took the time to explain everything clearly throughout the process."
+            },
+            {
+                reviewID: 5,
+                userImage: "assets/5.jpg",
+                userName: "Chloe Rivera",
+                userProfession: "Digital Marketer",
+                userReview: "Creative, skilled, and easy to work with. They understood my vision perfectly and brought it to life in an amazing way."
+            }
+        ];
+
+
+        const userImageElement = document.getElementById("userImage");
+        const userNameElement = document.getElementById("userName");
+        const userProfessionElement = document.getElementById("userProfession");
+        const userReviewElement = document.getElementById("userReview");
+
+
+
+        let reviewIndex = 1;
+
+        document.getElementById("prev-btn").addEventListener("click", () => {
+            if (reviewIndex === 1) {
+                reviewIndex = reviews.length;
+                console.log(typeof reviewIndex);
+                changeReview(reviewIndex);
+            } else {
+                reviewIndex--;
+                console.log(reviewIndex);
+                changeReview(reviewIndex);
+
+            }
+        })
+
+        document.getElementById("next-btn").addEventListener("click", () => {
+            if (reviewIndex === 5) {
+                reviewIndex = 1;
+                console.log(reviewIndex);
+                changeReview(reviewIndex);
+
+            } else {
+                reviewIndex++;
+                console.log(reviewIndex);
+                changeReview(reviewIndex);
+            }
+        })
+
+        function changeReview(index) {
+                const container = document.getElementById("card-container");
+
+                // Add fade-out
+                container.classList.add("fade");
+
+                setTimeout(() => {
+                    // Update content
+                    const review = reviews[index - 1];
+                    userImageElement.src = review.userImage;
+                    userNameElement.innerText = review.userName;
+                    userProfessionElement.innerText = review.userProfession;
+                    userReviewElement.innerText = review.userReview;
+
+                    // Remove fade to fade back in
+                    container.classList.remove("fade");
+                }, 500); // Match with transition duration
+            }
+
+
+        document.addEventListener("DOMContentLoaded", () => {
+            changeReview(reviewIndex);
+        })
+    </script>
+
+</body>
+
+</html>
