@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Navbar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: azure;
+            padding: 2rem 3rem;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .links ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .links ul li {
+            list-style: none;
+        }
+
+        .links ul li a {
+            text-decoration: none;
+            color: black;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .links ul li a:hover {
+            color: rgb(95, 95, 95);
+        }
+
+        .links ul li a::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: black;
+            transition: width 0.3s ease;
+        }
+
+        .links ul li a:hover::after {
+            width: 100%;
+        }
+
+        .cta {
+            display: flex;
+        }
+
+        .cta a {
+            text-decoration: none;
+            background-color: black;
+            color: white;
+            padding: 5px 17px;
+            border: 2px solid black;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .cta a:hover {
+            background-color: white;
+            color: black;
+        }
+
+        .responsive-icons {
+            display: none;
+        }
+
+        #menu {
+            display: none;
+            cursor: pointer;
+        }
+
+        .Responsive {
+            display: none;
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: white;
+            height: 100vh;
+        }
+
+        .Responsive.active {
+            display: block;
+        }
+
+        .links-2 ul {
+            display: flex;
+            flex-direction: column;
+            margin-top: 100px;
+            padding: 0 2rem;
+        }
+
+        .links-2 ul li {
+            list-style: none;
+            padding: 10px 0;
+        }
+
+        .links-2 ul li a {
+            text-decoration: none;
+            color: black;
+            transition: all 0.3s ease;
+            position: relative;
+            display: block;
+            border-bottom: 1px solid gray;
+        }
+
+        .links-2 ul li a:hover {
+            color: rgb(95, 95, 95);
+        }
+
+        .links-2 ul li a::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: black;
+            transition: width 0.3s ease;
+        }
+
+        .links-2 ul li a:hover::after {
+            width: 100%;
+        }
+
+        .cross {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            cursor: pointer;
+        }
+
+        a#sign-up {
+            text-decoration: none;
+            background-color: black;
+            color: white;
+            padding: 5px 17px;
+            border: 2px solid black;
+            border-radius: 50px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        @media (max-width: 710px) {
+
+            .links,
+            .cta {
+                display: none;
+            }
+
+            .responsive-icons {
+                display: inline;
+            }
+
+            #menu {
+                display: inline;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html"><img src="Logo.png" alt="Company Logo" height="20px"></a>
+            </div>
+            <div class="links">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="cta">
+                <a href="#">Sign Up</a>
+            </div>
+            <div class="responsive-icons">
+                <img id="menu" src="more.png" alt="Open menu" width="20px">
+            </div>
+        </nav>
+
+        <nav class="Responsive">
+            <div class="cross">
+                <img src="close.png" alt="Close menu" width="16px">
+            </div>
+            <div class="links-2">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a id="sign-up" href="#">Sign Up</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <script>
+        const menuIcon = document.getElementById("menu");
+        const responsiveNav = document.querySelector(".Responsive");
+        const closeIcon = document.querySelector(".cross");
+
+        menuIcon.addEventListener("click", () => {
+            responsiveNav.classList.add("active");
+        });
+
+        closeIcon.addEventListener("click", () => {
+            responsiveNav.classList.remove("active");
+        });
+    </script>
+</body>
+
+</html>
