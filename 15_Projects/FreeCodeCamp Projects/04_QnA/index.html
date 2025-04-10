@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QnA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            /* justify-content: center; */
+            align-items: center;
+            min-height: 100vh;
+            font-family: "Poppins", sans-serif;
+            background-color: #f5f5f5;
+            padding-top: 100px;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        .box {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            padding: 20px 30px;
+            border-radius: 7px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+            transition: all 0.2s ease-in-out;
+        }
+
+        .box:hover {
+            transform: translateX(10px);
+            cursor: pointer;
+        }
+
+
+        .question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .answer {
+            display: none;
+            margin-top: 20px;
+            color: rgb(32, 32, 32);
+        }
+
+        .show {
+            display: block;
+        }
+
+        hr {
+            margin-bottom: 10px;
+        }
+
+        .toggle-icon {
+            transition: all 0.1s ease-in-out;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>FAQs</h1>
+    <div class="box">
+        <!-- Repeatable QnA block -->
+        <div class="box-1">
+            <div class="question">
+                <h3>What is Netflix?</h3>
+                <img src="plus.png" alt="toggle" width="18px" class="toggle-icon" />
+            </div>
+            <div class="answer">
+                <hr />
+                <p>Netflix is a streaming service that offers a wide variety of TV shows, movies, anime, documentaries,
+                    and more on internet-connected devices.
+                    It allows users to watch content anytime without commercials for a monthly subscription fee.
+                    Netflix also produces original content like Stranger Things, The Witcher, and Money Heist.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="box">
+        <!-- Copy as needed for more QnAs -->
+        <div class="box-1">
+            <div class="question">
+                <h3>How much does Netflix cost?</h3>
+                <img src="plus.png" alt="toggle" width="18px" class="toggle-icon" />
+            </div>
+            <div class="answer">
+                <hr />
+                <p>Watch Netflix on your smartphone, tablet, Smart TV, laptop, or streaming device, all for one fixed
+                    monthly fee. Plans
+                    range from ₹149 to ₹649 a month. No extra costs, no contracts.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="box">
+        <!-- Copy as needed for more QnAs -->
+        <div class="box-1">
+            <div class="question">
+                <h3>Where can I watch?</h3>
+                <img src="plus.png" alt="toggle" width="18px" class="toggle-icon" />
+            </div>
+            <div class="answer">
+                <hr />
+                <p>Watch anywhere, anytime. Sign in with your Netflix account to watch instantly on the web at
+                    netflix.com from your
+                    personal computer or on any internet-connected device that offers the Netflix app, including smart
+                    TVs, smartphones,
+                    tablets, streaming media players and game consoles.</p>
+            </div>
+        </div>
+    </div>
+    <div class="box">
+        <!-- Copy as needed for more QnAs -->
+        <div class="box-1">
+            <div class="question">
+                <h3>How do I cancel?</h3>
+                <img src="plus.png" alt="toggle" width="18px" class="toggle-icon" />
+            </div>
+            <div class="answer">
+                <hr />
+                <p>Netflix is flexible. There are no annoying contracts and no commitments. You can easily cancel your
+                    account online in
+                    two clicks. There are no cancellation fees – start or stop your account anytime.</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Get all question elements
+        const questions = document.querySelectorAll(".question");
+
+        questions.forEach((question) => {
+            question.addEventListener("click", () => {
+                const answer = question.nextElementSibling;
+                answer.classList.toggle("show");
+
+                const icon = question.querySelector(".toggle-icon");
+                if (answer.classList.contains("show")) {
+                    icon.style.transform = "rotate(45deg)";
+                } else {
+                    icon.style.transform = "rotate(0deg)";
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
