@@ -44,7 +44,7 @@ This repository follows a step-by-step approach, covering:
 📌 Promises & Async/Await  
 📌 JavaScript Modules
 
-### 🔹 Advanced JavaScript (Coming Soon)
+### 🔹 Advanced JavaScript
 📌 Web APIs & Fetch API  
 📌 Error handling (`try...catch`)  
 📌 Performance optimization  
