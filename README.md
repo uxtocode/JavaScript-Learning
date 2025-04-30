@@ -71,4 +71,4 @@ This repository is **not open for contributions**, but your feedback is always w
 ## 📩 Contact
 For any inquiries or suggestions, don't hesitate to reach out by opening an issue in this repository.
 
-🧠 Keep Learning, Keep Coding! 🚀
+🧠 Keep Learning & Keep Coding! 🚀
